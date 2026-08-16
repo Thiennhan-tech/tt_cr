@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tỏ Tình Đáng Yêu</title>
+    <title>Thực sự là toi lỡ yeu cậu mất roi</title>
     <style>
         /* Định dạng cơ bản cho toàn bộ trang */
         * {
@@ -113,14 +113,17 @@
 <body>
 
     <div class="container" id="card">
-        <!-- Thay link ảnh/gif đáng yêu tùy thích ở đây -->
+        
         <img class="gif" src="https://giphy.com" alt="Cute Cat">
-        <h1 id="title">Cậu làm người yêu tớ nhé? ❤️</h1>
-        <p id="message">Tớ đã phân vân rất lâu mới dám hỏi câu này đó...</p>
+        <h1 id="title">Em làm ghệ a nha? ❤️</h1>
+        <p id="message">Phút đầu gặp em là anh đã hiểu thế nào là tình yêu sét đánh,
+        và đã rơi vào lưới tình của em, anh chỉ mong em sẽ đáp lại tình cảm của anh,
+        em nguyện ý làm bạn gái anh nha!!!</p>
+        
         
         <div class="btn-group">
-            <button id="btnYes">Có chứ! 🥰</button>
-            <button id="btnNo">Không đời nào 😜</button>
+            <button id="btnYes">Dạ cóa! ăm chã húi 🥰</button>
+            <button id="btnNo">Không cóa đâu 😜</button>
         </div>
     </div>
 
@@ -131,7 +134,7 @@
         const message = document.getElementById('message');
         const card = document.getElementById('card');
 
-        // Hàm di chuyển nút "Không" ngẫu nhiên khi đưa chuột vào hoặc bấm trúng
+        
         function moveNoButton() {
             // Giới hạn vùng nút có thể nhảy (tránh nhảy ra ngoài màn hình)
             const x = Math.random() * (window.innerWidth - btnNo.offsetWidth - 20);
@@ -145,19 +148,18 @@
         btnNo.addEventListener('mouseover', moveNoButton);
         btnNo.addEventListener('click', moveNoButton);
 
-        // Xử lý sự kiện khi bấm nút "Có"
+        
         btnYes.addEventListener('click', () => {
             // Thay đổi nội dung hiển thị
-            title.innerHTML = "Hihi biết ngay mà! 😘";
-            message.innerHTML = "Tớ sẽ nhắn tin cho cậu ngay lập tức nhaaa!";
+            title.innerHTML = "Oke!Người đtrai như Thiện Nhân đây chính thức có ghệ ròi nha 😘";
+            message.innerHTML = "Thiện Nhân sẽ iu em bằng cả tấm lòng, vậy nên xin em đừng bỏ rơi ng đtrai này nha 😘🥰😍 🤩!";
             btnYes.style.display = 'none';
             btnNo.style.display = 'none';
             
             // Kích hoạt hiệu ứng mưa tim
             setInterval(createHeart, 150);
         });
-
-        // Hàm tạo trái tim bay ngẫu nhiên
+        
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('heart');
@@ -172,6 +174,10 @@
             setTimeout(() => {
                 heart.remove();
             }, 4000);
+        }
+    </script>
+</body>
+</html>
         }
     </script>
 </body>
