@@ -31,9 +31,7 @@
             position: relative;
         }
 
-        /* =========================
-           HIỆU ỨNG LẤP LÁNH
-        ========================= */
+        
 
         .sparkle {
             position: fixed;
@@ -55,9 +53,7 @@
             }
         }
 
-        /* =========================
-           CARD
-        ========================= */
+        
 
         .container {
             position: relative;
@@ -78,9 +74,6 @@
             max-width: 450px;
             width: 90%;
 
-            max-height: 92vh;
-            overflow-y: auto;
-
             transition: all 0.5s ease;
 
             animation: cardAppear 1s ease;
@@ -98,10 +91,7 @@
             }
         }
 
-        /* =========================
-           GIF
-        ========================= */
-
+        
         .gif-wrapper {
             position: relative;
 
@@ -164,9 +154,7 @@
             }
         }
 
-        /* =========================
-           TEXT
-        ========================= */
+        
 
         h1 {
             color: #ff4d6d;
@@ -191,9 +179,7 @@
             margin-bottom: 28px;
         }
 
-        /* =========================
-           BUTTON
-        ========================= */
+    
 
         .btn-group {
             display: flex;
@@ -258,7 +244,7 @@
             left: 58%;
         }
 
-        
+    
 
         .heart {
             position: fixed;
@@ -271,7 +257,8 @@
 
             z-index: 2;
 
-            animation: heartFall linear forwards;
+            animation:
+                heartFall linear forwards;
 
             text-shadow:
                 0 0 10px rgba(255, 77, 109, 0.4);
@@ -346,228 +333,6 @@
 
         
 
-        .qr-section {
-            display: none;
-
-            flex-direction: column;
-
-            align-items: center;
-
-            margin-top: 25px;
-
-            padding-top: 10px;
-        }
-
-        .qr-title {
-            color: #ff4d6d;
-
-            font-size: 1.05rem;
-
-            font-weight: bold;
-
-            margin-bottom: 5px;
-        }
-
-        .qr-subtitle {
-            color: #777;
-
-            font-size: 0.85rem;
-
-            margin-bottom: 15px;
-        }
-
-        
-        .heart-to-qr {
-            position: relative;
-
-            width: 170px;
-            height: 170px;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-        }
-
-        .big-heart {
-            position: absolute;
-
-            font-size: 120px;
-
-            color: #ff4d6d;
-
-            filter:
-                drop-shadow(
-                    0 0 15px
-                    rgba(255, 77, 109, 0.6)
-                );
-
-            animation: bigHeartBeat 0.8s ease-in-out infinite;
-
-            z-index: 5;
-        }
-
-        @keyframes bigHeartBeat {
-
-            0%, 100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.15);
-            }
-        }
-
-        
-
-        .heart-piece {
-            position: absolute;
-
-            font-size: 35px;
-
-            opacity: 0;
-
-            z-index: 10;
-        }
-
-        .piece-1 {
-            animation: pieceOne 1.2s ease forwards;
-        }
-
-        .piece-2 {
-            animation: pieceTwo 1.2s ease forwards;
-        }
-
-        .piece-3 {
-            animation: pieceThree 1.2s ease forwards;
-        }
-
-        .piece-4 {
-            animation: pieceFour 1.2s ease forwards;
-        }
-
-        @keyframes pieceOne {
-            0% {
-                opacity: 1;
-                transform: translate(0, 0) scale(1);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translate(-100px, -80px) scale(0.2);
-            }
-        }
-
-        @keyframes pieceTwo {
-            0% {
-                opacity: 1;
-                transform: translate(0, 0) scale(1);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translate(100px, -80px) scale(0.2);
-            }
-        }
-
-        @keyframes pieceThree {
-            0% {
-                opacity: 1;
-                transform: translate(0, 0) scale(1);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translate(-100px, 80px) scale(0.2);
-            }
-        }
-
-        @keyframes pieceFour {
-            0% {
-                opacity: 1;
-                transform: translate(0, 0) scale(1);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translate(100px, 80px) scale(0.2);
-            }
-        }
-
-        
-
-        .qr-code {
-            width: 170px;
-            height: 170px;
-
-            padding: 8px;
-
-            background: white;
-
-            border-radius: 20px;
-
-            box-shadow:
-                0 10px 30px
-                rgba(255, 77, 109, 0.3);
-
-            opacity: 0;
-
-            transform:
-                scale(0)
-                rotate(-15deg);
-
-            transition:
-                opacity 0.8s ease,
-                transform 0.8s cubic-bezier(
-                    0.175,
-                    0.885,
-                    0.32,
-                    1.275
-                );
-
-            border: 4px solid #fff;
-        }
-
-        .qr-code.show {
-            opacity: 1;
-
-            transform:
-                scale(1)
-                rotate(0deg);
-        }
-
-        
-
-        .qr-section.reveal .big-heart {
-            animation:
-                heartDisappear 0.8s ease forwards;
-        }
-
-        @keyframes heartDisappear {
-
-            0% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            60% {
-                opacity: 1;
-                transform: scale(1.3);
-            }
-
-            100% {
-                opacity: 0;
-                transform: scale(0);
-            }
-        }
-
-        .qr-section.reveal .heart-piece {
-            opacity: 1;
-        }
-
-        
-
         @media (max-width: 500px) {
 
             .container {
@@ -589,22 +354,7 @@
 
             button {
                 padding: 12px 18px;
-
                 font-size: 0.9rem;
-            }
-
-            .qr-code {
-                width: 150px;
-                height: 150px;
-            }
-
-            .heart-to-qr {
-                width: 150px;
-                height: 150px;
-            }
-
-            .big-heart {
-                font-size: 100px;
             }
         }
     </style>
@@ -612,23 +362,23 @@
 
 <body>
 
+    
+
     <div class="container" id="card">
 
-        =
+        <!-- GIF dễ thương -->
         <div class="gif-wrapper">
 
             <img
                 class="gif"
-                src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2dpOWhlZXRlc2V5MXR2eHhiaHJ6eG5scjI4MGpzczdrdzhwMHMwayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Zl7u48zLVFgLpRwq6f/giphy.gif"
-                alt="💕❤️💖"
+                src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3R4aDByM3Z3Z2N5eW9tNmY5c3l0Z2t5c2N5a3l5a3R2a3R5dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MDJ9IbxxvDUQM/giphy.gif"
+                alt="Cute Cat GIF"
             >
 
             <span class="gif-heart">💗</span>
             <span class="gif-heart">💕</span>
 
         </div>
-
-        
 
         <h1 id="title">
             Em làm ghệ a nha? ❤️
@@ -640,8 +390,6 @@
             Anh chỉ mong em sẽ đáp lại tình cảm của anh,
             em nguyện ý làm bạn gái anh nha!!! 🥺❤️
         </p>
-
-        <!-- NÚT -->
 
         <div class="btn-group">
 
@@ -655,87 +403,17 @@
 
         </div>
 
-
-        <!-- =========================
-             QR CODE
-        ========================== -->
-
-        <div class="qr-section" id="qrSection">
-
-            <div class="qr-title">
-                💕 Có một điều bất ngờ dành cho em 💕
-            </div>
-
-            <div class="qr-subtitle">
-                Look:))! 👀❤️
-            </div>
-
-            
-
-            <div class="heart-to-qr">
-
-                <div class="big-heart">
-                    ❤️
-                </div>
-
-                <div class="heart-piece piece-1">
-                    💗
-                </div>
-
-                <div class="heart-piece piece-2">
-                    💗
-                </div>
-
-                <div class="heart-piece piece-3">
-                    💕
-                </div>
-
-                <div class="heart-piece piece-4">
-                    💕
-                </div>
-
-                <!-- QR CỦA BẠN -->
-
-                <img
-                    id="qrCode"
-                    class="qr-code"
-                    src="Screenshot 2026-08-17 105957.png"
-                    alt="Mã QR"
-                >
-
-            </div>
-
-            <div class="qr-subtitle">
-                📱 Scan this QR ❤️
-            </div>
-
-        </div>
-
     </div>
-
 
     <script>
 
-        const btnYes =
-            document.getElementById("btnYes");
+        const btnYes = document.getElementById("btnYes");
+        const btnNo = document.getElementById("btnNo");
 
-        const btnNo =
-            document.getElementById("btnNo");
+        const title = document.getElementById("title");
+        const message = document.getElementById("message");
 
-        const title =
-            document.getElementById("title");
-
-        const message =
-            document.getElementById("message");
-
-        const qrSection =
-            document.getElementById("qrSection");
-
-        const qrCode =
-            document.getElementById("qrCode");
-
-
-       
+        
 
         function moveNoButton() {
 
@@ -766,7 +444,6 @@
             btnNo.style.top = `${y}px`;
         }
 
-
         btnNo.addEventListener(
             "mouseenter",
             moveNoButton
@@ -782,8 +459,8 @@
             moveNoButton
         );
 
-
         
+
         function createHeart() {
 
             const heart =
@@ -804,42 +481,31 @@
             heart.innerHTML =
                 hearts[
                     Math.floor(
-                        Math.random() *
-                        hearts.length
+                        Math.random() * hearts.length
                     )
                 ];
 
             heart.style.left =
-                Math.random() *
-                100 + "vw";
+                Math.random() * 100 + "vw";
 
             heart.style.fontSize =
-                Math.random() * 25 +
-                15 + "px";
+                Math.random() * 25 + 15 + "px";
 
             heart.style.animationDuration =
-                Math.random() * 3 +
-                3 + "s";
+                Math.random() * 3 + 3 + "s";
 
             heart.style.opacity =
-                Math.random() * 0.5 +
-                0.5;
+                Math.random() * 0.5 + 0.5;
 
-            document.body.appendChild(
-                heart
-            );
+            document.body.appendChild(heart);
 
             setTimeout(() => {
                 heart.remove();
             }, 7000);
         }
 
-
-        setInterval(
-            createHeart,
-            350
-        );
-
+        
+        setInterval(createHeart, 350);
 
         
 
@@ -848,51 +514,39 @@
             const sparkle =
                 document.createElement("div");
 
-            sparkle.className =
-                "sparkle";
+            sparkle.className = "sparkle";
 
-            sparkle.innerHTML =
-                "✨";
+            sparkle.innerHTML = "✨";
 
             sparkle.style.left =
-                Math.random() *
-                100 + "vw";
+                Math.random() * 100 + "vw";
 
             sparkle.style.top =
-                Math.random() *
-                100 + "vh";
+                Math.random() * 100 + "vh";
 
             sparkle.style.fontSize =
-                Math.random() * 15 +
-                10 + "px";
+                Math.random() * 15 + 10 + "px";
 
             sparkle.style.animationDuration =
-                Math.random() * 2 +
-                1.5 + "s";
+                Math.random() * 2 + 1.5 + "s";
 
-            document.body.appendChild(
-                sparkle
-            );
+            document.body.appendChild(sparkle);
 
             setTimeout(() => {
                 sparkle.remove();
             }, 3500);
         }
 
+        setInterval(createSparkle, 500);
 
-        setInterval(
-            createSparkle,
-            500
-        );
-
+        
 
         function createLoveHeart() {
 
             const heart =
                 document.createElement("div");
 
-            heart.className =
-                "love-heart";
+            heart.className = "love-heart";
 
             heart.innerHTML = [
                 "❤️",
@@ -902,109 +556,48 @@
                 "💘",
                 "🥰"
             ][
-                Math.floor(
-                    Math.random() * 6
-                )
+                Math.floor(Math.random() * 6)
             ];
 
             heart.style.left =
-                Math.random() *
-                100 + "vw";
+                Math.random() * 100 + "vw";
 
             heart.style.fontSize =
-                Math.random() * 35 +
-                20 + "px";
+                Math.random() * 35 + 20 + "px";
 
             heart.style.animationDuration =
-                Math.random() * 2 +
-                3 + "s";
+                Math.random() * 2 + 3 + "s";
 
-            document.body.appendChild(
-                heart
-            );
+            document.body.appendChild(heart);
 
             setTimeout(() => {
                 heart.remove();
             }, 5000);
         }
 
+       
+        btnYes.addEventListener("click", () => {
 
-        
+            title.innerHTML =
+                "Oke! Người đtrai như Thiện Nhân đây chính thức có ghệ ròi nha 😘❤️";
 
-        btnYes.addEventListener(
-            "click",
-            () => {
+            message.innerHTML =
+                "Thiện Nhân sẽ iu em bằng cả tấm lòng, " +
+                "vậy nên xin em đừng bỏ rơi ng đtrai này nha 😘🥰😍🤩!";
+            btnYes.style.display = "none";
+            btnNo.style.display = "none";
+            setInterval(createLoveHeart, 100);
+            document.body.style.background =
+                "linear-gradient(135deg, #ff9a9e, #fad0c4, #ffccd5)";
+            const card =
+                document.getElementById("card");
 
-                
-                title.innerHTML =
-                    "Oke! Người đtrai như Thiện Nhân đây chính thức có ghệ ròi nha 😘❤️";
+            card.style.transform =
+                "scale(1.05)";
 
-                message.innerHTML =
-                    "Thiện Nhân sẽ iu em bằng cả tấm lòng, " +
-                    "vậy nên xin em đừng bỏ rơi ng đtrai này nha 😘🥰😍🤩!";
+        });
 
-
-                
-                btnYes.style.display =
-                    "none";
-
-                btnNo.style.display =
-                    "none";
-
-
-                
-                setInterval(
-                    createLoveHeart,
-                    100
-                );
-
-
-                
-                document.body.style.background =
-                    "linear-gradient(135deg, #ff9a9e, #fad0c4, #ffccd5)";
-
-
-                
-                const card =
-                    document.getElementById(
-                        "card"
-                    );
-
-                card.style.transform =
-                    "scale(1.03)";
-
-
-                
-
-                qrSection.style.display =
-                    "flex";
-
-
-                /*
-                    Chờ một chút để
-                    trái tim xuất hiện
-                */
-
-                setTimeout(() => {
-
-                    qrSection.classList.add(
-                        "reveal"
-                    );
-
-                }, 800);
-
-
-                
-                setTimeout(() => {
-
-                    qrCode.classList.add(
-                        "show"
-                    );
-
-                }, 1800);
-
-            }
-        );
     </script>
+
 </body>
 </html>
