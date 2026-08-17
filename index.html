@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực sự là toi lỡ yeu cậu mất roi</title>
+
+    <title>💕 I love you! 💕</title>
+
     <style>
-        /* Định dạng cơ bản cho toàn bộ trang */
         * {
             margin: 0;
             padding: 0;
@@ -13,172 +14,997 @@
         }
 
         body {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+
+            background:
+                radial-gradient(circle at 20% 20%, #fff0f5 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, #ffd6e0 0%, transparent 35%),
+                linear-gradient(135deg, #ffe5ec, #ffc2d1);
+
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
             overflow: hidden;
             text-align: center;
+            position: relative;
         }
 
-        /* Khung chứa nội dung chính */
+        /* =========================
+           HIỆU ỨNG LẤP LÁNH
+        ========================= */
+
+        .sparkle {
+            position: fixed;
+            color: white;
+            pointer-events: none;
+            animation: sparkleAnimation 2s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        @keyframes sparkleAnimation {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.5) rotate(0deg);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(180deg);
+            }
+        }
+
+        /* =========================
+           CARD
+        ========================= */
+
         .container {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
+            position: relative;
             z-index: 10;
-            max-width: 400px;
+
+            background: rgba(255, 255, 255, 0.88);
+
+            padding: 35px 28px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 20px 50px rgba(255, 77, 109, 0.25),
+                0 0 0 2px rgba(255, 255, 255, 0.6);
+
+            backdrop-filter: blur(15px);
+
+            max-width: 450px;
             width: 90%;
+
+            max-height: 92vh;
+            overflow-y: auto;
+
             transition: all 0.5s ease;
+
+            animation: cardAppear 1s ease;
         }
 
-        h1 {
-            color: #ff4d6d;
-            font-size: 2rem;
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* =========================
+           GIF
+        ========================= */
+
+        .gif-wrapper {
+            position: relative;
+
+            display: inline-block;
+
             margin-bottom: 20px;
-        }
 
-        p {
-            color: #4a4a4a;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
+            animation: cuteFloat 3s ease-in-out infinite;
         }
 
         .gif {
             width: 150px;
-            margin-bottom: 20px;
+            height: 150px;
+
+            object-fit: cover;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 10px 25px rgba(255, 77, 109, 0.25);
+
+            border: 5px solid white;
         }
 
-        /* Khu vực chứa nút bấm */
+        .gif-heart {
+            position: absolute;
+            font-size: 30px;
+
+            animation: heartFloat 2s ease-in-out infinite;
+        }
+
+        .gif-heart:nth-child(2) {
+            top: -15px;
+            right: -15px;
+        }
+
+        .gif-heart:nth-child(3) {
+            bottom: 5px;
+            left: -20px;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes cuteFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes heartFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(-10deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(10deg);
+            }
+        }
+
+        /* =========================
+           TEXT
+        ========================= */
+
+        h1 {
+            color: #ff4d6d;
+
+            font-size: 2rem;
+
+            margin-bottom: 18px;
+
+            line-height: 1.3;
+
+            text-shadow:
+                0 3px 10px rgba(255, 77, 109, 0.15);
+        }
+
+        p {
+            color: #555;
+
+            font-size: 1.05rem;
+
+            line-height: 1.7;
+
+            margin-bottom: 28px;
+        }
+
+        /* =========================
+           BUTTON
+        ========================= */
+
         .btn-group {
             display: flex;
+
             justify-content: center;
-            gap: 20px;
+
+            align-items: center;
+
+            gap: 18px;
+
             position: relative;
-            height: 50px;
+
+            height: 60px;
         }
 
         button {
-            padding: 12px 30px;
+            padding: 13px 25px;
+
             font-size: 1rem;
+
             font-weight: bold;
+
             border: none;
-            border-radius: 25px;
+
+            border-radius: 30px;
+
             cursor: pointer;
-            transition: transform 0.2s ease, background-color 0.2s;
+
+            transition:
+                transform 0.2s ease,
+                background-color 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
         #btnYes {
-            background-color: #ff4d6d;
+            background: linear-gradient(
+                135deg,
+                #ff4d6d,
+                #ff758f
+            );
+
             color: white;
+
+            box-shadow:
+                0 8px 20px rgba(255, 77, 109, 0.3);
         }
 
         #btnYes:hover {
-            background-color: #ff758f;
-            transform: scale(1.1);
+            transform: scale(1.08);
+
+            box-shadow:
+                0 10px 25px rgba(255, 77, 109, 0.4);
         }
 
         #btnNo {
-            background-color: #6c757d;
+            background: #6c757d;
+
             color: white;
+
             position: absolute;
-            left: 55%;
+
+            left: 58%;
         }
 
-        /* Hiệu ứng bong bóng trái tim bay lên */
+        
+
         .heart {
-            position: absolute;
+            position: fixed;
+
+            top: -50px;
+
             color: #ff4d6d;
-            font-size: 20px;
+
             pointer-events: none;
-            animation: fly Up 3s linear forwards;
+
+            z-index: 2;
+
+            animation: heartFall linear forwards;
+
+            text-shadow:
+                0 0 10px rgba(255, 77, 109, 0.4);
         }
 
-        @keyframes flyUp {
+        @keyframes heartFall {
+
             0% {
-                transform: translateY(100vh) scale(0);
+                transform:
+                    translateY(-50px)
+                    rotate(0deg)
+                    scale(0.5);
+
+                opacity: 0;
+            }
+
+            10% {
                 opacity: 1;
             }
+
+            50% {
+                transform:
+                    translateY(50vh)
+                    rotate(180deg)
+                    scale(1);
+            }
+
             100% {
-                transform: translateY(-10vh) scale(1.5);
+                transform:
+                    translateY(110vh)
+                    rotate(360deg)
+                    scale(1.3);
+
                 opacity: 0;
+            }
+        }
+
+        
+
+        .love-heart {
+            position: fixed;
+
+            bottom: -50px;
+
+            pointer-events: none;
+
+            z-index: 20;
+
+            animation: loveFly 4s ease-out forwards;
+        }
+
+        @keyframes loveFly {
+
+            0% {
+                transform:
+                    translateY(0)
+                    scale(0.5)
+                    rotate(0deg);
+
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    scale(1.8)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+        
+
+        .qr-section {
+            display: none;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            margin-top: 25px;
+
+            padding-top: 10px;
+        }
+
+        .qr-title {
+            color: #ff4d6d;
+
+            font-size: 1.05rem;
+
+            font-weight: bold;
+
+            margin-bottom: 5px;
+        }
+
+        .qr-subtitle {
+            color: #777;
+
+            font-size: 0.85rem;
+
+            margin-bottom: 15px;
+        }
+
+        
+        .heart-to-qr {
+            position: relative;
+
+            width: 170px;
+            height: 170px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+        .big-heart {
+            position: absolute;
+
+            font-size: 120px;
+
+            color: #ff4d6d;
+
+            filter:
+                drop-shadow(
+                    0 0 15px
+                    rgba(255, 77, 109, 0.6)
+                );
+
+            animation: bigHeartBeat 0.8s ease-in-out infinite;
+
+            z-index: 5;
+        }
+
+        @keyframes bigHeartBeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        
+
+        .heart-piece {
+            position: absolute;
+
+            font-size: 35px;
+
+            opacity: 0;
+
+            z-index: 10;
+        }
+
+        .piece-1 {
+            animation: pieceOne 1.2s ease forwards;
+        }
+
+        .piece-2 {
+            animation: pieceTwo 1.2s ease forwards;
+        }
+
+        .piece-3 {
+            animation: pieceThree 1.2s ease forwards;
+        }
+
+        .piece-4 {
+            animation: pieceFour 1.2s ease forwards;
+        }
+
+        @keyframes pieceOne {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-100px, -80px) scale(0.2);
+            }
+        }
+
+        @keyframes pieceTwo {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(100px, -80px) scale(0.2);
+            }
+        }
+
+        @keyframes pieceThree {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-100px, 80px) scale(0.2);
+            }
+        }
+
+        @keyframes pieceFour {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(100px, 80px) scale(0.2);
+            }
+        }
+
+        
+
+        .qr-code {
+            width: 170px;
+            height: 170px;
+
+            padding: 8px;
+
+            background: white;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(255, 77, 109, 0.3);
+
+            opacity: 0;
+
+            transform:
+                scale(0)
+                rotate(-15deg);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s cubic-bezier(
+                    0.175,
+                    0.885,
+                    0.32,
+                    1.275
+                );
+
+            border: 4px solid #fff;
+        }
+
+        .qr-code.show {
+            opacity: 1;
+
+            transform:
+                scale(1)
+                rotate(0deg);
+        }
+
+        
+
+        .qr-section.reveal .big-heart {
+            animation:
+                heartDisappear 0.8s ease forwards;
+        }
+
+        @keyframes heartDisappear {
+
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            60% {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+
+        .qr-section.reveal .heart-piece {
+            opacity: 1;
+        }
+
+        
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding: 28px 20px;
+            }
+
+            .gif {
+                width: 125px;
+                height: 125px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+
+            button {
+                padding: 12px 18px;
+
+                font-size: 0.9rem;
+            }
+
+            .qr-code {
+                width: 150px;
+                height: 150px;
+            }
+
+            .heart-to-qr {
+                width: 150px;
+                height: 150px;
+            }
+
+            .big-heart {
+                font-size: 100px;
             }
         }
     </style>
 </head>
+
 <body>
 
     <div class="container" id="card">
-        
-        <img class="gif" src="https://giphy.com" alt="Cute Cat">
-        <h1 id="title">Em làm ghệ a nha? ❤️</h1>
-        <p id="message">Phút đầu gặp em là anh đã hiểu thế nào là tình yêu sét đánh,
-        và đã rơi vào lưới tình của em, anh chỉ mong em sẽ đáp lại tình cảm của anh,
-        em nguyện ý làm bạn gái anh nha!!!</p>
-        
-        
-        <div class="btn-group">
-            <button id="btnYes">Dạ cóa! ăm chã húi 🥰</button>
-            <button id="btnNo">Không cóa đâu 😜</button>
+
+        =
+        <div class="gif-wrapper">
+
+            <img
+                class="gif"
+                src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2dpOWhlZXRlc2V5MXR2eHhiaHJ6eG5scjI4MGpzczdrdzhwMHMwayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Zl7u48zLVFgLpRwq6f/giphy.gif"
+                alt="💕❤️💖"
+            >
+
+            <span class="gif-heart">💗</span>
+            <span class="gif-heart">💕</span>
+
         </div>
+
+        
+
+        <h1 id="title">
+            Em làm ghệ a nha? ❤️
+        </h1>
+
+        <p id="message">
+            Phút đầu gặp em là anh đã hiểu thế nào là tình yêu sét đánh,
+            và đã rơi vào lưới tình của em.
+            Anh chỉ mong em sẽ đáp lại tình cảm của anh,
+            em nguyện ý làm bạn gái anh nha!!! 🥺❤️
+        </p>
+
+        <!-- NÚT -->
+
+        <div class="btn-group">
+
+            <button id="btnYes">
+                Dạ cóa! ăm chã húi 🥰
+            </button>
+
+            <button id="btnNo">
+                Không cóa đâu 😜
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             QR CODE
+        ========================== -->
+
+        <div class="qr-section" id="qrSection">
+
+            <div class="qr-title">
+                💕 Có một điều bất ngờ dành cho em 💕
+            </div>
+
+            <div class="qr-subtitle">
+                Look:))! 👀❤️
+            </div>
+
+            
+
+            <div class="heart-to-qr">
+
+                <div class="big-heart">
+                    ❤️
+                </div>
+
+                <div class="heart-piece piece-1">
+                    💗
+                </div>
+
+                <div class="heart-piece piece-2">
+                    💗
+                </div>
+
+                <div class="heart-piece piece-3">
+                    💕
+                </div>
+
+                <div class="heart-piece piece-4">
+                    💕
+                </div>
+
+                <!-- QR CỦA BẠN -->
+
+                <img
+                    id="qrCode"
+                    class="qr-code"
+                    src="Screenshot 2026-08-17 105957.png"
+                    alt="Mã QR"
+                >
+
+            </div>
+
+            <div class="qr-subtitle">
+                📱 Scan this QR ❤️
+            </div>
+
+        </div>
+
     </div>
 
-    <script>
-        const btnYes = document.getElementById('btnYes');
-        const btnNo = document.getElementById('btnNo');
-        const title = document.getElementById('title');
-        const message = document.getElementById('message');
-        const card = document.getElementById('card');
 
-        
+    <script>
+
+        const btnYes =
+            document.getElementById("btnYes");
+
+        const btnNo =
+            document.getElementById("btnNo");
+
+        const title =
+            document.getElementById("title");
+
+        const message =
+            document.getElementById("message");
+
+        const qrSection =
+            document.getElementById("qrSection");
+
+        const qrCode =
+            document.getElementById("qrCode");
+
+
+       
+
         function moveNoButton() {
-            // Giới hạn vùng nút có thể nhảy (tránh nhảy ra ngoài màn hình)
-            const x = Math.random() * (window.innerWidth - btnNo.offsetWidth - 20);
-            const y = Math.random() * (window.innerHeight - btnNo.offsetHeight - 20);
-            
-            btnNo.style.position = 'fixed';
+
+            const padding = 20;
+
+            const maxX =
+                window.innerWidth -
+                btnNo.offsetWidth -
+                padding;
+
+            const maxY =
+                window.innerHeight -
+                btnNo.offsetHeight -
+                padding;
+
+            const x =
+                Math.random() *
+                Math.max(maxX, padding);
+
+            const y =
+                Math.random() *
+                Math.max(maxY, padding);
+
+            btnNo.style.position = "fixed";
+
             btnNo.style.left = `${x}px`;
+
             btnNo.style.top = `${y}px`;
         }
 
-        btnNo.addEventListener('mouseover', moveNoButton);
-        btnNo.addEventListener('click', moveNoButton);
 
-        
-        btnYes.addEventListener('click', () => {
-            // Thay đổi nội dung hiển thị
-            title.innerHTML = "Oke!Người đtrai như Thiện Nhân đây chính thức có ghệ ròi nha 😘";
-            message.innerHTML = "Thiện Nhân sẽ iu em bằng cả tấm lòng, vậy nên xin em đừng bỏ rơi ng đtrai này nha 😘🥰😍 🤩!";
-            btnYes.style.display = 'none';
-            btnNo.style.display = 'none';
-            
-            // Kích hoạt hiệu ứng mưa tim
-            setInterval(createHeart, 150);
-        });
+        btnNo.addEventListener(
+            "mouseenter",
+            moveNoButton
+        );
+
+        btnNo.addEventListener(
+            "touchstart",
+            moveNoButton
+        );
+
+        btnNo.addEventListener(
+            "click",
+            moveNoButton
+        );
+
+
         
         function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 2 + 2 + 's'; // từ 2s đến 4s
-            heart.style.fontSize = Math.random() * 20 + 15 + 'px'; // từ 15px đến 35px
-            
-            document.body.appendChild(heart);
 
-            // Xóa tim sau khi bay xong để tránh nặng máy
+            const heart =
+                document.createElement("div");
+
+            heart.className = "heart";
+
+            const hearts = [
+                "❤️",
+                "💕",
+                "💗",
+                "💖",
+                "💓",
+                "💘",
+                "💝"
+            ];
+
+            heart.innerHTML =
+                hearts[
+                    Math.floor(
+                        Math.random() *
+                        hearts.length
+                    )
+                ];
+
+            heart.style.left =
+                Math.random() *
+                100 + "vw";
+
+            heart.style.fontSize =
+                Math.random() * 25 +
+                15 + "px";
+
+            heart.style.animationDuration =
+                Math.random() * 3 +
+                3 + "s";
+
+            heart.style.opacity =
+                Math.random() * 0.5 +
+                0.5;
+
+            document.body.appendChild(
+                heart
+            );
+
             setTimeout(() => {
                 heart.remove();
-            }, 4000);
+            }, 7000);
         }
-    </script>
-</body>
-</html>
+
+
+        setInterval(
+            createHeart,
+            350
+        );
+
+
+        
+
+        function createSparkle() {
+
+            const sparkle =
+                document.createElement("div");
+
+            sparkle.className =
+                "sparkle";
+
+            sparkle.innerHTML =
+                "✨";
+
+            sparkle.style.left =
+                Math.random() *
+                100 + "vw";
+
+            sparkle.style.top =
+                Math.random() *
+                100 + "vh";
+
+            sparkle.style.fontSize =
+                Math.random() * 15 +
+                10 + "px";
+
+            sparkle.style.animationDuration =
+                Math.random() * 2 +
+                1.5 + "s";
+
+            document.body.appendChild(
+                sparkle
+            );
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3500);
         }
+
+
+        setInterval(
+            createSparkle,
+            500
+        );
+
+
+        function createLoveHeart() {
+
+            const heart =
+                document.createElement("div");
+
+            heart.className =
+                "love-heart";
+
+            heart.innerHTML = [
+                "❤️",
+                "💕",
+                "💗",
+                "💖",
+                "💘",
+                "🥰"
+            ][
+                Math.floor(
+                    Math.random() * 6
+                )
+            ];
+
+            heart.style.left =
+                Math.random() *
+                100 + "vw";
+
+            heart.style.fontSize =
+                Math.random() * 35 +
+                20 + "px";
+
+            heart.style.animationDuration =
+                Math.random() * 2 +
+                3 + "s";
+
+            document.body.appendChild(
+                heart
+            );
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+
+        
+
+        btnYes.addEventListener(
+            "click",
+            () => {
+
+                
+                title.innerHTML =
+                    "Oke! Người đtrai như Thiện Nhân đây chính thức có ghệ ròi nha 😘❤️";
+
+                message.innerHTML =
+                    "Thiện Nhân sẽ iu em bằng cả tấm lòng, " +
+                    "vậy nên xin em đừng bỏ rơi ng đtrai này nha 😘🥰😍🤩!";
+
+
+                
+                btnYes.style.display =
+                    "none";
+
+                btnNo.style.display =
+                    "none";
+
+
+                
+                setInterval(
+                    createLoveHeart,
+                    100
+                );
+
+
+                
+                document.body.style.background =
+                    "linear-gradient(135deg, #ff9a9e, #fad0c4, #ffccd5)";
+
+
+                
+                const card =
+                    document.getElementById(
+                        "card"
+                    );
+
+                card.style.transform =
+                    "scale(1.03)";
+
+
+                
+
+                qrSection.style.display =
+                    "flex";
+
+
+                /*
+                    Chờ một chút để
+                    trái tim xuất hiện
+                */
+
+                setTimeout(() => {
+
+                    qrSection.classList.add(
+                        "reveal"
+                    );
+
+                }, 800);
+
+
+                
+                setTimeout(() => {
+
+                    qrCode.classList.add(
+                        "show"
+                    );
+
+                }, 1800);
+
+            }
+        );
     </script>
 </body>
 </html>
