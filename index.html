@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>💕 A Little Secret For You</title>
+    <title>💕 I Want To Tell You Something...</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -16,13 +18,13 @@
 
         body {
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
             color: #555;
             background:
                 radial-gradient(
                     circle at 15% 20%,
-                    rgba(255,255,255,.9),
-                    transparent 30%
+                    rgba(255,255,255,.85),
+                    transparent 28%
                 ),
                 radial-gradient(
                     circle at 85% 80%,
@@ -35,9 +37,6 @@
                     #ffc2d1,
                     #ffd6e0
                 );
-            display: flex;
-            justify-content: center;
-            align-items: center;
             position: relative;
         }
 
@@ -48,25 +47,26 @@
             width: 450px;
             height: 450px;
             border-radius: 50%;
-            filter: blur(90px);
+            filter: blur(80px);
             pointer-events: none;
+            z-index: 0;
         }
 
         body::before {
             background: rgba(255,255,255,.4);
-            top: -200px;
-            left: -200px;
-            animation: glowOne 9s ease-in-out infinite alternate;
+            top: -180px;
+            left: -180px;
+            animation: glow1 9s ease-in-out infinite alternate;
         }
 
         body::after {
             background: rgba(255,77,109,.15);
-            right: -180px;
             bottom: -200px;
-            animation: glowTwo 10s ease-in-out infinite alternate;
+            right: -150px;
+            animation: glow2 10s ease-in-out infinite alternate;
         }
 
-        @keyframes glowOne {
+        @keyframes glow1 {
             from {
                 transform: translate(0,0);
             }
@@ -76,7 +76,7 @@
             }
         }
 
-        @keyframes glowTwo {
+        @keyframes glow2 {
             from {
                 transform: translate(0,0);
             }
@@ -91,10 +91,12 @@
             z-index: 10;
             width: 100%;
             min-height: 100vh;
-            padding: 25px;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 25px;
+            opacity: 1;
+            transform: scale(1);
             transition:
                 opacity .5s ease,
                 transform .5s ease;
@@ -105,12 +107,12 @@
         }
 
         .card {
-            width: min(470px, 92vw);
-            padding: 42px 30px;
+            width: min(480px, 92vw);
+            padding: 40px 30px;
             text-align: center;
             border-radius: 32px;
-            background: rgba(255,255,255,.88);
-            border: 1px solid rgba(255,255,255,.9);
+            background: rgba(255,255,255,.9);
+            border: 1px solid rgba(255,255,255,.95);
             box-shadow:
                 0 25px 70px rgba(255,77,109,.22),
                 0 0 0 1px rgba(255,255,255,.5);
@@ -134,15 +136,15 @@
             }
         }
 
-        .lock {
-            width: 115px;
-            height: 115px;
+        .lock-icon {
+            width: 110px;
+            height: 110px;
             margin: 0 auto 25px;
-            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 58px;
+            font-size: 55px;
+            border-radius: 50%;
             background:
                 linear-gradient(
                     135deg,
@@ -150,15 +152,11 @@
                     #ffe5ec
                 );
             box-shadow:
-                0 15px 35px
-                rgba(255,77,109,.18);
-            animation:
-                float 3s
-                ease-in-out
-                infinite;
+                0 15px 35px rgba(255,77,109,.18);
+            animation: floating 3s ease-in-out infinite;
         }
 
-        @keyframes float {
+        @keyframes floating {
             0%,100% {
                 transform: translateY(0);
             }
@@ -168,11 +166,11 @@
             }
         }
 
-        .eyebrow {
+        .small-text {
             color: #999;
-            font-size: .9rem;
-            letter-spacing: 2px;
+            font-size: .85rem;
             margin-bottom: 12px;
+            letter-spacing: 1px;
         }
 
         h1 {
@@ -181,15 +179,14 @@
             line-height: 1.35;
             margin-bottom: 18px;
             text-shadow:
-                0 4px 15px
-                rgba(255,77,109,.15);
+                0 4px 15px rgba(255,77,109,.15);
         }
 
         p {
-            color: #666;
             font-size: 1.05rem;
             line-height: 1.8;
             margin-bottom: 25px;
+            color: #666;
         }
 
         .primary-btn {
@@ -207,8 +204,7 @@
                     #ff758f
                 );
             box-shadow:
-                0 10px 25px
-                rgba(255,77,109,.3);
+                0 10px 25px rgba(255,77,109,.3);
             transition:
                 transform .2s ease,
                 box-shadow .2s ease;
@@ -217,26 +213,25 @@
         .primary-btn:hover {
             transform: scale(1.08);
             box-shadow:
-                0 15px 35px
-                rgba(255,77,109,.4);
+                0 15px 35px rgba(255,77,109,.4);
         }
 
         .primary-btn:active {
             transform: scale(.96);
         }
 
-        .heart-main {
+        .big-heart {
+            font-size: 65px;
             display: block;
-            font-size: 75px;
             margin-bottom: 15px;
             animation:
-                heartbeat
+                heartBeat
                 1.4s
                 ease-in-out
                 infinite;
         }
 
-        @keyframes heartbeat {
+        @keyframes heartBeat {
             0%,100% {
                 transform: scale(1);
             }
@@ -254,39 +249,68 @@
             }
         }
 
-        .typing {
-            min-height: 350px;
+        .letter-page {
+            min-height: 330px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .letter-content {
+            width: 100%;
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.8;
             white-space: pre-line;
-            text-align: left;
-            margin-bottom: 10px;
+            text-align: center;
         }
 
-        .cursor {
-            display: inline-block;
-            width: 2px;
-            height: 18px;
-            margin-left: 3px;
-            background: #ff4d6d;
-            animation: blink .8s infinite;
+        .letter-content.fade {
+            animation: letterFade .45s ease;
         }
 
-        @keyframes blink {
-            0%,50% {
-                opacity: 1;
-            }
-
-            51%,100% {
+        @keyframes letterFade {
+            from {
                 opacity: 0;
+                transform: translateX(25px);
             }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .letter-progress {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin: 5px 0 20px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ffd0da;
+            transition: .3s ease;
+        }
+
+        .dot.active {
+            width: 24px;
+            border-radius: 10px;
+            background: #ff4d6d;
         }
 
         .button-area {
-            height: 75px;
+            position: relative;
+            height: 80px;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 20px;
-            position: relative;
         }
 
         #yesBtn {
@@ -295,11 +319,11 @@
         }
 
         #noBtn {
+            background: #777;
+            color: white;
             border: none;
             padding: 13px 23px;
             border-radius: 50px;
-            background: #777;
-            color: white;
             cursor: pointer;
             font-weight: bold;
             transition: transform .15s ease;
@@ -311,26 +335,14 @@
 
         .success-card {
             width: min(650px, 94vw);
-            max-height: 92vh;
-            overflow-y: auto;
             padding: 45px 30px;
             text-align: center;
             border-radius: 35px;
-            background: rgba(255,255,255,.91);
+            background: rgba(255,255,255,.92);
             box-shadow:
-                0 30px 80px
-                rgba(255,77,109,.25);
+                0 30px 80px rgba(255,77,109,.25);
             backdrop-filter: blur(20px);
             animation: successAppear 1s ease;
-        }
-
-        .success-card::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        .success-card::-webkit-scrollbar-thumb {
-            background: #ffb3c1;
-            border-radius: 10px;
         }
 
         @keyframes successAppear {
@@ -350,14 +362,14 @@
         }
 
         .success-title {
+            font-size: 2.4rem;
             color: #ff4d6d;
-            font-size: 2.5rem;
             margin-bottom: 15px;
         }
 
-        .name {
-            color: #ff4d6d;
+        .couple {
             font-size: 1.4rem;
+            color: #ff4d6d;
             margin: 20px 0;
             font-weight: bold;
         }
@@ -365,7 +377,7 @@
         .counter-box {
             margin: 30px auto;
             padding: 20px;
-            max-width: 540px;
+            max-width: 520px;
             border-radius: 25px;
             background:
                 linear-gradient(
@@ -373,6 +385,7 @@
                     #fff0f5,
                     #ffe5ec
                 );
+            border: 1px solid rgba(255,77,109,.1);
         }
 
         .counter-title {
@@ -389,19 +402,18 @@
         }
 
         .time {
-            min-width: 70px;
-            padding: 10px 8px;
+            min-width: 65px;
+            padding: 10px;
             border-radius: 15px;
             background: white;
             box-shadow:
-                0 5px 15px
-                rgba(255,77,109,.08);
+                0 5px 15px rgba(255,77,109,.08);
         }
 
         .time strong {
             display: block;
             color: #ff4d6d;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
         }
 
         .time span {
@@ -411,7 +423,7 @@
 
         .final-message {
             margin-top: 30px;
-            padding: 22px;
+            padding: 20px;
             border-radius: 20px;
             background:
                 linear-gradient(
@@ -432,9 +444,9 @@
         }
 
         .secret {
-            margin-top: 22px;
+            margin-top: 20px;
             color: #ff4d6d;
-            font-size: .9rem;
+            font-size: .85rem;
             cursor: pointer;
             opacity: .7;
             transition: .2s;
@@ -509,6 +521,8 @@
 
         .confetti {
             position: fixed;
+            width: 10px;
+            height: 10px;
             top: -20px;
             z-index: 90;
             animation:
@@ -528,6 +542,11 @@
         }
 
         @media (max-width: 500px) {
+
+            .scene {
+                padding: 15px;
+            }
+
             .card {
                 padding: 32px 20px;
             }
@@ -536,12 +555,13 @@
                 font-size: 1.65rem;
             }
 
-            p {
-                font-size: .95rem;
+            .letter-page {
+                min-height: 350px;
             }
 
-            .typing {
-                min-height: 400px;
+            .letter-content {
+                font-size: .95rem;
+                line-height: 1.75;
             }
 
             .success-card {
@@ -552,14 +572,23 @@
                 font-size: 2rem;
             }
 
-            .time {
-                min-width: 60px;
+            .counter {
+                gap: 6px;
             }
 
-            .counter {
-                gap: 7px;
+            .time {
+                min-width: 58px;
+            }
+
+            .time strong {
+                font-size: 1.15rem;
+            }
+
+            .time span {
+                font-size: .65rem;
             }
         }
+
     </style>
 </head>
 
@@ -569,17 +598,17 @@
 
         <div class="card">
 
-            <div class="lock">
+            <div class="lock-icon">
                 🔐
             </div>
 
-            <div class="eyebrow">
+            <div class="small-text">
                 THERE IS SOMETHING I WANT TO TELL YOU...
             </div>
 
             <h1>
-                A Little Secret<br>
-                Just For You 💌
+                A little secret<br>
+                just for you!! 💌
             </h1>
 
             <p>
@@ -589,34 +618,48 @@
             <button
                 class="primary-btn"
                 id="openBtn">
-                Open It 💕
+                Open it 💕
             </button>
 
         </div>
 
     </section>
 
-
-    <section
-        class="scene hidden"
-        id="scene2">
+    <section class="scene hidden" id="scene2">
 
         <div class="card">
 
-            <span class="heart-main">
+            <span class="big-heart">
                 ❤️
             </span>
 
-            <h1 id="title">
-                Do... do you want to be my girlfriend?
-            </h1>
+            <div class="letter-page">
 
-            <p
-                class="typing"
-                id="message">
-            </p>
+                <div
+                    class="letter-content"
+                    id="letterContent">
+                </div>
 
-            <div class="button-area">
+            </div>
+
+            <div class="letter-progress">
+
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+
+            </div>
+
+            <button
+                class="primary-btn"
+                id="nextBtn">
+                Next 💕
+            </button>
+
+            <div
+                class="button-area"
+                id="answerArea"
+                style="display:none;">
 
                 <button
                     class="primary-btn"
@@ -634,14 +677,11 @@
 
     </section>
 
-
-    <section
-        class="scene hidden"
-        id="scene3">
+    <section class="scene hidden" id="scene3">
 
         <div class="success-card">
 
-            <span class="heart-main">
+            <span class="big-heart">
                 💖
             </span>
 
@@ -649,21 +689,17 @@
                 IT'S OFFICIAL!!! 🎉
             </div>
 
-            <div class="name">
-                Thiện Nhân ❤️
+            <div class="couple">
+                Thiện Nhân ❤️ You
             </div>
 
             <p>
                 From today on, you're no longer
                 just the person I like...
-
                 <br><br>
 
-                You're
-                <b>my girlfriend</b>
-                now. 🥰❤️
+                You're <b>my girlfriend</b> now. 🥰
             </p>
-
 
             <div class="counter-box">
 
@@ -675,38 +711,37 @@
 
                     <div class="time">
                         <strong id="years">0</strong>
-                        <span>YEAR</span>
+                        <span>YEARS</span>
                     </div>
 
                     <div class="time">
                         <strong id="months">0</strong>
-                        <span>MONTH</span>
+                        <span>MONTHS</span>
                     </div>
 
                     <div class="time">
                         <strong id="days">0</strong>
-                        <span>DAY</span>
+                        <span>DAYS</span>
                     </div>
 
                     <div class="time">
                         <strong id="hours">0</strong>
-                        <span>HOUR</span>
+                        <span>HOURS</span>
                     </div>
 
                     <div class="time">
                         <strong id="minutes">0</strong>
-                        <span>MINUTE</span>
+                        <span>MINUTES</span>
                     </div>
 
                     <div class="time">
                         <strong id="seconds">0</strong>
-                        <span>SECOND</span>
+                        <span>SECONDS</span>
                     </div>
 
                 </div>
 
             </div>
-
 
             <div class="final-message">
 
@@ -716,23 +751,8 @@
                 <br><br>
 
                 I may not be perfect,
-                and I may not always know
-                the right words to say.
-
-                <br><br>
-
-                But I promise I'll keep trying
-                to make you smile,
-                make you feel loved,
-                and make every day
-                a little brighter.
-
-                <br><br>
-
-                I'll be there when you're happy,
-                when you're tired,
-                and even when things don't
-                go as planned.
+                but I'll always try my best
+                to make you happy.
 
                 <span class="signature">
                     — Thiện Nhân 💕
@@ -740,18 +760,17 @@
 
             </div>
 
-
             <div
                 class="secret"
                 id="secretBtn">
 
-                🤫 Psst... there's one more secret 💕
+                🤫 Psst... There's one more secret 💕😍
+
             </div>
 
         </div>
 
     </section>
-
 
     <script>
 
@@ -764,9 +783,14 @@
         const scene3 =
             document.getElementById("scene3");
 
-
         const openBtn =
             document.getElementById("openBtn");
+
+        const nextBtn =
+            document.getElementById("nextBtn");
+
+        const answerArea =
+            document.getElementById("answerArea");
 
         const yesBtn =
             document.getElementById("yesBtn");
@@ -774,143 +798,111 @@
         const noBtn =
             document.getElementById("noBtn");
 
-        const title =
-            document.getElementById("title");
+        const letterContent =
+            document.getElementById("letterContent");
 
-        const message =
-            document.getElementById("message");
+        const dots =
+            document.querySelectorAll(".dot");
 
+        const letterPages = [
 
-        function switchScene(
-            oldScene,
-            newScene
-        ) {
+`Loving you is like breathing.
+I just can't stop. ❤️
+
+I don't know exactly when it happened,
+but somehow, you became someone
+I couldn't stop thinking about.`,
+
+`Your smile, your voice,
+the way you talk...
+
+Even the smallest things about you
+make my days a little brighter.
+
+I know I'm not perfect,
+but I genuinely want
+to be by your side.`,
+
+`I can't promise that every day
+will be perfect.
+
+But I can promise
+I'll always try my best
+to make you smile
+and feel loved.
+
+Thank you for coming into my life,
+my little sunshine. ☀️
+
+So, if you don't mind...
+
+I'd love to be the person
+who gets to love you
+a little more every day. 🥺❤️`
+
+        ];
+
+        let currentPage = 0;
+        let noCount = 0;
+
+        function switchScene(oldScene, newScene) {
 
             oldScene.style.opacity = "0";
-
-            oldScene.style.transform =
-                "scale(.95)";
+            oldScene.style.transform = "scale(.95)";
 
             setTimeout(() => {
 
-                oldScene.classList.add(
-                    "hidden"
-                );
+                oldScene.classList.add("hidden");
 
-                newScene.classList.remove(
-                    "hidden"
-                );
+                newScene.classList.remove("hidden");
 
                 newScene.style.opacity = "0";
-
-                newScene.style.transform =
-                    "scale(1.05)";
+                newScene.style.transform = "scale(1.05)";
 
                 setTimeout(() => {
 
                     newScene.style.opacity = "1";
-
-                    newScene.style.transform =
-                        "scale(1)";
+                    newScene.style.transform = "scale(1)";
 
                 }, 50);
 
             }, 500);
         }
 
+        function showLetterPage(page) {
 
-        const loveText =
-`Loving you is like breathing.
-I just can't stop.
+            letterContent.classList.remove("fade");
 
-I don't know exactly when it happened,
-but somewhere along the way,
-you became someone I couldn't stop thinking about.
+            setTimeout(() => {
 
-Every little thing about you
-somehow makes my days a little brighter.
+                letterContent.innerText =
+                    letterPages[page];
 
-Your smile.
-Your voice.
-The way you talk.
-Everything about you.
+                letterContent.classList.add("fade");
 
-I know I'm not perfect,
-and I may not always know
-the right words to say.
+            }, 50);
 
-But if there's one thing I'm sure about,
-it's that I genuinely want
-to be by your side.
+            dots.forEach((dot, index) => {
 
-I want to be there when you're happy,
-when you're tired,
-and even on the days
-when things don't go as planned.
+                dot.classList.toggle(
+                    "active",
+                    index === page
+                );
 
-I can't promise that every day
-will be perfect.
+            });
 
-But I can promise that I'll keep trying
-to make you smile
-and feel loved.
+            if (page === letterPages.length - 1) {
 
-Thank you for coming into my life,
-my little sunshine.
+                nextBtn.innerText =
+                    "I'm done reading... 🥺";
 
-You make my days brighter
-and my life so much better.
+            } else {
 
-So, if you don't mind...
-
-I'd love to be the person
-who gets to love you
-a little more every day.
-
-🥺❤️`;
-
-
-        function startTyping() {
-
-            message.innerHTML = "";
-
-            let index = 0;
-
-            const cursor =
-                document.createElement("span");
-
-            cursor.className = "cursor";
-
-            message.appendChild(cursor);
-
-
-            function type() {
-
-                if (
-                    index <
-                    loveText.length
-                ) {
-
-                    cursor.before(
-                        document.createTextNode(
-                            loveText[index]
-                        )
-                    );
-
-                    index++;
-
-                    setTimeout(
-                        type,
-                        28
-                    );
-
-                }
+                nextBtn.innerText =
+                    "Next 💕";
 
             }
-
-            type();
         }
-
 
         openBtn.addEventListener(
             "click",
@@ -921,36 +913,55 @@ a little more every day.
                     scene2
                 );
 
-                setTimeout(
-                    startTyping,
-                    700
-                );
+                showLetterPage(0);
 
             }
         );
 
+        nextBtn.addEventListener(
+            "click",
+            () => {
+
+                if (
+                    currentPage <
+                    letterPages.length - 1
+                ) {
+
+                    currentPage++;
+
+                    showLetterPage(
+                        currentPage
+                    );
+
+                } else {
+
+                    nextBtn.style.display =
+                        "none";
+
+                    answerArea.style.display =
+                        "flex";
+
+                }
+
+            }
+        );
 
         const noTexts = [
 
-            "NO WAY 😜",
+            "NO WAY! 😜",
             "Are you sure? 🥺",
-            "Think again 😭",
+            "Think again! 😭",
             "One more chance? 🥹",
-            "Please don't 😭",
+            "Pleaseeee 😭",
+            "Don't do this to me 💔",
             "Give me a chance ❤️",
-            "Please say YES 🥺",
-            "You can't escape! 😈❤️"
+            "Just click YES! 🥺"
 
         ];
 
-
-        let noCount = 0;
-
-
         function moveNoButton() {
 
-            noBtn.style.position =
-                "fixed";
+            noBtn.style.position = "fixed";
 
             const padding = 15;
 
@@ -986,13 +997,11 @@ a little more every day.
                     maxY - padding
                 );
 
-
             noBtn.style.left =
                 `${x}px`;
 
             noBtn.style.top =
                 `${y}px`;
-
 
             noBtn.innerText =
                 noTexts[
@@ -1002,23 +1011,16 @@ a little more every day.
                     )
                 ];
 
-
             noCount++;
 
-
             yesBtn.style.transform =
-                `scale(${Math.min(
-                    1.3,
-                    1 + noCount * .025
-                )})`;
+                `scale(${1 + noCount * .025})`;
         }
-
 
         noBtn.addEventListener(
             "mouseenter",
             moveNoButton
         );
-
 
         noBtn.addEventListener(
             "touchstart",
@@ -1034,7 +1036,6 @@ a little more every day.
             }
         );
 
-
         noBtn.addEventListener(
             "click",
             event => {
@@ -1046,6 +1047,151 @@ a little more every day.
             }
         );
 
+        const hearts = [
+
+            "❤️",
+            "💕",
+            "💗",
+            "💖",
+            "💓",
+            "💘",
+            "💝"
+
+        ];
+
+        function createHeart() {
+
+            const heart =
+                document.createElement("div");
+
+            heart.className =
+                "heart";
+
+            heart.innerText =
+                hearts[
+                    Math.floor(
+                        Math.random() *
+                        hearts.length
+                    )
+                ];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                Math.random() * 22 + 15 + "px";
+
+            heart.style.animationDuration =
+                Math.random() * 3 + 3 + "s";
+
+            document.body.appendChild(
+                heart
+            );
+
+            setTimeout(
+                () => heart.remove(),
+                7000
+            );
+        }
+
+        setInterval(
+            createHeart,
+            500
+        );
+
+        function createFlyingHeart() {
+
+            const heart =
+                document.createElement("div");
+
+            heart.className =
+                "fly-heart";
+
+            heart.innerText =
+                hearts[
+                    Math.floor(
+                        Math.random() *
+                        hearts.length
+                    )
+                ];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                Math.random() * 35 + 20 + "px";
+
+            heart.style.animationDuration =
+                Math.random() * 2 + 3 + "s";
+
+            document.body.appendChild(
+                heart
+            );
+
+            setTimeout(
+                () => heart.remove(),
+                5000
+            );
+        }
+
+        function createConfetti() {
+
+            const colors = [
+
+                "#ff4d6d",
+                "#ff758f",
+                "#ffd166",
+                "#ffffff",
+                "#ffb3c1",
+                "#cdb4db"
+
+            ];
+
+            for (
+                let i = 0;
+                i < 120;
+                i++
+            ) {
+
+                const piece =
+                    document.createElement(
+                        "div"
+                    );
+
+                piece.className =
+                    "confetti";
+
+                piece.style.left =
+                    Math.random() * 100 + "vw";
+
+                piece.style.background =
+                    colors[
+                        Math.floor(
+                            Math.random() *
+                            colors.length
+                        )
+                    ];
+
+                piece.style.width =
+                    Math.random() * 8 + 5 + "px";
+
+                piece.style.height =
+                    Math.random() * 12 + 5 + "px";
+
+                piece.style.animationDelay =
+                    Math.random() * 1.5 + "s";
+
+                document.body.appendChild(
+                    piece
+                );
+
+                setTimeout(
+                    () => piece.remove(),
+                    5000
+                );
+
+            }
+        }
 
         yesBtn.addEventListener(
             "click",
@@ -1078,198 +1224,16 @@ a little more every day.
                     6000
                 );
 
-
                 document.body.style.background =
                     "linear-gradient(135deg,#ff9a9e,#fad0c4,#ffccd5)";
-
 
                 startLoveCounter();
 
             }
         );
 
-
-        const hearts = [
-            "❤️",
-            "💕",
-            "💗",
-            "💖",
-            "💓",
-            "💘",
-            "💝"
-        ];
-
-
-        function createHeart() {
-
-            const heart =
-                document.createElement("div");
-
-            heart.className =
-                "heart";
-
-            heart.innerHTML =
-                hearts[
-                    Math.floor(
-                        Math.random() *
-                        hearts.length
-                    )
-                ];
-
-            heart.style.left =
-                Math.random() * 100 +
-                "vw";
-
-            heart.style.fontSize =
-                Math.random() * 22 +
-                15 +
-                "px";
-
-            heart.style.animationDuration =
-                Math.random() * 3 +
-                3 +
-                "s";
-
-            document.body.appendChild(
-                heart
-            );
-
-
-            setTimeout(
-                () => heart.remove(),
-                7000
-            );
-        }
-
-
-        setInterval(
-            createHeart,
-            450
-        );
-
-
-        function createFlyingHeart() {
-
-            const heart =
-                document.createElement("div");
-
-            heart.className =
-                "fly-heart";
-
-            heart.innerHTML =
-                hearts[
-                    Math.floor(
-                        Math.random() *
-                        hearts.length
-                    )
-                ];
-
-            heart.style.left =
-                Math.random() * 100 +
-                "vw";
-
-            heart.style.fontSize =
-                Math.random() * 35 +
-                20 +
-                "px";
-
-            heart.style.animationDuration =
-                Math.random() * 2 +
-                3 +
-                "s";
-
-            document.body.appendChild(
-                heart
-            );
-
-
-            setTimeout(
-                () => heart.remove(),
-                5000
-            );
-        }
-
-
-        function createConfetti() {
-
-            const colors = [
-                "#ff4d6d",
-                "#ff758f",
-                "#ffd166",
-                "#ffffff",
-                "#ffb3c1",
-                "#cdb4db"
-            ];
-
-
-            for (
-                let i = 0;
-                i < 120;
-                i++
-            ) {
-
-                const piece =
-                    document.createElement(
-                        "div"
-                    );
-
-                piece.className =
-                    "confetti";
-
-                piece.style.left =
-                    Math.random() * 100 +
-                    "vw";
-
-                piece.style.background =
-                    colors[
-                        Math.floor(
-                            Math.random() *
-                            colors.length
-                        )
-                    ];
-
-                piece.style.width =
-                    Math.random() * 8 +
-                    5 +
-                    "px";
-
-                piece.style.height =
-                    Math.random() * 12 +
-                    5 +
-                    "px";
-
-                piece.style.animationDelay =
-                    Math.random() * 1.5 +
-                    "s";
-
-                document.body.appendChild(
-                    piece
-                );
-
-
-                setTimeout(
-                    () => piece.remove(),
-                    5000
-                );
-
-            }
-        }
-
-
         const relationshipStart =
-            new Date("2026-08-24T23:39:00");
-
-
-        function plural(
-            number,
-            word
-        ) {
-
-            return number === 1
-                ? word
-                : word + "S";
-        }
-
+            new Date();
 
         function startLoveCounter() {
 
@@ -1278,192 +1242,101 @@ a little more every day.
                 const now =
                     new Date();
 
-
                 let years =
                     now.getFullYear() -
                     relationshipStart.getFullYear();
-
 
                 let months =
                     now.getMonth() -
                     relationshipStart.getMonth();
 
-
                 let days =
                     now.getDate() -
                     relationshipStart.getDate();
 
+                let hours =
+                    now.getHours() -
+                    relationshipStart.getHours();
+
+                let minutes =
+                    now.getMinutes() -
+                    relationshipStart.getMinutes();
+
+                let seconds =
+                    now.getSeconds() -
+                    relationshipStart.getSeconds();
+
+                if (seconds < 0) {
+
+                    seconds += 60;
+                    minutes--;
+
+                }
+
+                if (minutes < 0) {
+
+                    minutes += 60;
+                    hours--;
+
+                }
+
+                if (hours < 0) {
+
+                    hours += 24;
+                    days--;
+
+                }
 
                 if (days < 0) {
-
-                    months--;
 
                     const previousMonth =
                         new Date(
                             now.getFullYear(),
                             now.getMonth(),
                             0
-                        ).getDate();
+                        );
 
-                    days += previousMonth;
+                    days +=
+                        previousMonth.getDate();
+
+                    months--;
 
                 }
-
 
                 if (months < 0) {
 
-                    years--;
-
                     months += 12;
+                    years--;
 
                 }
 
-
-                const anniversary =
-                    new Date(
-                        relationshipStart
-                    );
-
-
-                anniversary.setFullYear(
-                    relationshipStart.getFullYear() +
-                    years
-                );
-
-
-                anniversary.setMonth(
-                    relationshipStart.getMonth() +
-                    months
-                );
-
-
-                anniversary.setDate(
-                    relationshipStart.getDate() +
-                    days
-                );
-
-
-                const difference =
-                    now - anniversary;
-
-
-                const totalSeconds =
-                    Math.floor(
-                        difference / 1000
-                    );
-
-
-                const hours =
-                    Math.floor(
-                        totalSeconds / 3600
-                    );
-
-
-                const minutes =
-                    Math.floor(
-                        (totalSeconds % 3600) /
-                        60
-                    );
-
-
-                const seconds =
-                    totalSeconds % 60;
-
-
                 document.getElementById(
                     "years"
-                ).innerText =
-                    years;
-
+                ).innerText = years;
 
                 document.getElementById(
                     "months"
-                ).innerText =
-                    months;
-
+                ).innerText = months;
 
                 document.getElementById(
                     "days"
-                ).innerText =
-                    days;
-
+                ).innerText = days;
 
                 document.getElementById(
                     "hours"
-                ).innerText =
-                    hours;
-
+                ).innerText = hours;
 
                 document.getElementById(
                     "minutes"
-                ).innerText =
-                    minutes;
-
+                ).innerText = minutes;
 
                 document.getElementById(
                     "seconds"
-                ).innerText =
-                    seconds;
-
-
-                document.getElementById(
-                    "years"
-                ).nextElementSibling.innerText =
-                    plural(
-                        years,
-                        "YEAR"
-                    );
-
-
-                document.getElementById(
-                    "months"
-                ).nextElementSibling.innerText =
-                    plural(
-                        months,
-                        "MONTH"
-                    );
-
-
-                document.getElementById(
-                    "days"
-                ).nextElementSibling.innerText =
-                    plural(
-                        days,
-                        "DAY"
-                    );
-
-
-                document.getElementById(
-                    "hours"
-                ).nextElementSibling.innerText =
-                    plural(
-                        hours,
-                        "HOUR"
-                    );
-
-
-                document.getElementById(
-                    "minutes"
-                ).nextElementSibling.innerText =
-                    plural(
-                        minutes,
-                        "MINUTE"
-                    );
-
-
-                document.getElementById(
-                    "seconds"
-                ).nextElementSibling.innerText =
-                    plural(
-                        seconds,
-                        "SECOND"
-                    );
+                ).innerText = seconds;
 
             }
 
-
             updateCounter();
-
 
             setInterval(
                 updateCounter,
@@ -1471,12 +1344,10 @@ a little more every day.
             );
         }
 
-
         const secretBtn =
             document.getElementById(
                 "secretBtn"
             );
-
 
         secretBtn.addEventListener(
             "click",
@@ -1487,7 +1358,6 @@ a little more every day.
                     "I like you even more than " +
                     "anything I've written on this website. ❤️🥺"
                 );
-
 
                 for (
                     let i = 0;
@@ -1508,5 +1378,6 @@ a little more every day.
     </script>
 
 </body>
+
 </html>
 
