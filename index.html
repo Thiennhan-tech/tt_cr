@@ -19,24 +19,12 @@
         body {
             min-height: 100vh;
             overflow-x: hidden;
-            color: #555;
+            color: #e8dfe4;
             background:
-                radial-gradient(
-                    circle at 15% 20%,
-                    rgba(255,255,255,.85),
-                    transparent 28%
-                ),
-                radial-gradient(
-                    circle at 85% 80%,
-                    rgba(255,182,193,.55),
-                    transparent 35%
-                ),
-                linear-gradient(
-                    135deg,
-                    #ffe5ec,
-                    #ffc2d1,
-                    #ffd6e0
-                );
+                radial-gradient(circle at 50% 42%, rgba(255,25,70,.14), transparent 24%),
+                radial-gradient(circle at 20% 80%, rgba(120,0,35,.18), transparent 35%),
+                radial-gradient(circle at 85% 15%, rgba(90,0,40,.16), transparent 32%),
+                linear-gradient(135deg,#030305,#0a0509 45%,#10030a);
             position: relative;
         }
 
@@ -60,7 +48,7 @@
         }
 
         body::after {
-            background: rgba(255,77,109,.15);
+            background: rgba(255,20,65,.15);
             bottom: -200px;
             right: -150px;
             animation: glow2 10s ease-in-out infinite alternate;
@@ -111,11 +99,12 @@
             padding: 40px 30px;
             text-align: center;
             border-radius: 32px;
-            background: rgba(255,255,255,.9);
-            border: 1px solid rgba(255,255,255,.95);
+            background: rgba(12,9,13,.82);
+            border: 1px solid rgba(255,45,85,.22);
             box-shadow:
-                0 25px 70px rgba(255,77,109,.22),
-                0 0 0 1px rgba(255,255,255,.5);
+                0 25px 80px rgba(255,0,60,.18),
+                0 0 45px rgba(255,0,60,.08),
+                inset 0 0 35px rgba(255,0,60,.025);
             backdrop-filter: blur(20px);
             animation: cardAppear .9s ease;
         }
@@ -152,7 +141,7 @@
                     #ffe5ec
                 );
             box-shadow:
-                0 15px 35px rgba(255,77,109,.18);
+                0 15px 35px rgba(255,20,65,.18);
             animation: floating 3s ease-in-out infinite;
         }
 
@@ -167,26 +156,26 @@
         }
 
         .small-text {
-            color: #999;
+            color: #9d8f97;
             font-size: .85rem;
             margin-bottom: 12px;
             letter-spacing: 1px;
         }
 
         h1 {
-            color: #ff4d6d;
+            color: #ff3159;
             font-size: 2rem;
             line-height: 1.35;
             margin-bottom: 18px;
             text-shadow:
-                0 4px 15px rgba(255,77,109,.15);
+                0 4px 15px rgba(255,20,65,.15);
         }
 
         p {
             font-size: 1.05rem;
             line-height: 1.8;
             margin-bottom: 25px;
-            color: #666;
+            color: #cfc4ca;
         }
 
         .primary-btn {
@@ -194,7 +183,7 @@
             padding: 14px 30px;
             border-radius: 50px;
             cursor: pointer;
-            color: white;
+            color: #fff;
             font-size: 1rem;
             font-weight: bold;
             background:
@@ -204,7 +193,7 @@
                     #ff758f
                 );
             box-shadow:
-                0 10px 25px rgba(255,77,109,.3);
+                0 10px 25px rgba(255,20,65,.3);
             transition:
                 transform .2s ease,
                 box-shadow .2s ease;
@@ -213,7 +202,7 @@
         .primary-btn:hover {
             transform: scale(1.08);
             box-shadow:
-                0 15px 35px rgba(255,77,109,.4);
+                0 15px 35px rgba(255,20,65,.4);
         }
 
         .primary-btn:active {
@@ -259,7 +248,7 @@
 
         .letter-content {
             width: 100%;
-            color: #666;
+            color: #cfc4ca;
             font-size: 1.05rem;
             line-height: 1.8;
             white-space: pre-line;
@@ -294,14 +283,14 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: #ffd0da;
+            background: #35151f;
             transition: .3s ease;
         }
 
         .dot.active {
             width: 24px;
             border-radius: 10px;
-            background: #ff4d6d;
+            background: #ff1748;
         }
 
         .button-area {
@@ -319,9 +308,9 @@
         }
 
         #noBtn {
-            background: #777;
-            color: white;
-            border: none;
+            background: #171217;
+            color: #fff;
+            border: 1px solid rgba(255,70,100,.22);
             padding: 13px 23px;
             border-radius: 50px;
             cursor: pointer;
@@ -338,9 +327,10 @@
             padding: 45px 30px;
             text-align: center;
             border-radius: 35px;
-            background: rgba(255,255,255,.92);
+            background: rgba(11,8,12,.88);
             box-shadow:
-                0 30px 80px rgba(255,77,109,.25);
+                0 30px 100px rgba(255,0,60,.24),
+                0 0 55px rgba(255,0,60,.10);
             backdrop-filter: blur(20px);
             animation: successAppear 1s ease;
         }
@@ -363,13 +353,13 @@
 
         .success-title {
             font-size: 2.4rem;
-            color: #ff4d6d;
+            color: #ff3159;
             margin-bottom: 15px;
         }
 
         .couple {
             font-size: 1.4rem;
-            color: #ff4d6d;
+            color: #ff3159;
             margin: 20px 0;
             font-weight: bold;
         }
@@ -385,11 +375,11 @@
                     #fff0f5,
                     #ffe5ec
                 );
-            border: 1px solid rgba(255,77,109,.1);
+            border: 1px solid rgba(255,20,65,.1);
         }
 
         .counter-title {
-            color: #999;
+            color: #9d8f97;
             font-size: .95rem;
             margin-bottom: 12px;
         }
@@ -405,19 +395,19 @@
             min-width: 65px;
             padding: 10px;
             border-radius: 15px;
-            background: white;
+            background: rgba(25,18,23,.95);
             box-shadow:
-                0 5px 15px rgba(255,77,109,.08);
+                0 5px 15px rgba(255,20,65,.08);
         }
 
         .time strong {
             display: block;
-            color: #ff4d6d;
+            color: #ff3159;
             font-size: 1.35rem;
         }
 
         .time span {
-            color: #999;
+            color: #9d8f97;
             font-size: .7rem;
         }
 
@@ -431,21 +421,21 @@
                     #fff5f7,
                     #ffe8ee
                 );
-            color: #666;
+            color: #cfc4ca;
             line-height: 1.8;
         }
 
         .signature {
             display: block;
             margin-top: 15px;
-            color: #ff4d6d;
+            color: #ff3159;
             font-size: 1.15rem;
             font-weight: bold;
         }
 
         .secret {
             margin-top: 20px;
-            color: #ff4d6d;
+            color: #ff3159;
             font-size: .85rem;
             cursor: pointer;
             opacity: .7;
@@ -454,6 +444,59 @@
 
         .secret:hover {
             opacity: 1;
+        }
+
+
+        .lock-icon {
+            background: radial-gradient(circle, rgba(255,35,75,.28), rgba(35,4,12,.5) 58%, transparent 72%);
+            box-shadow: 0 0 30px rgba(255,0,55,.18), 0 0 75px rgba(255,0,55,.10);
+            color: #ff1748;
+            text-shadow: 0 0 12px #ff1748, 0 0 30px rgba(255,0,55,.8), 0 0 55px rgba(255,0,55,.45);
+        }
+
+        .big-heart {
+            color: #ff1748;
+            text-shadow: 0 0 8px #ff1748, 0 0 20px #ff1748, 0 0 45px rgba(255,0,55,.9), 0 0 80px rgba(255,0,55,.45);
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg,#ff1748,#b80035);
+            box-shadow: 0 0 18px rgba(255,0,55,.35), 0 10px 30px rgba(255,0,55,.18);
+        }
+
+        .primary-btn:hover {
+            box-shadow: 0 0 30px rgba(255,0,55,.65), 0 15px 40px rgba(255,0,55,.25);
+        }
+
+        .counter-box,.final-message {
+            background: linear-gradient(135deg,rgba(35,10,19,.9),rgba(17,10,15,.9));
+            border: 1px solid rgba(255,35,75,.12);
+        }
+
+        .time {
+            background: rgba(16,10,14,.95);
+            border: 1px solid rgba(255,35,75,.10);
+        }
+
+        #yesBtn {
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        #noBtn {
+            transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+        }
+
+        #noBtn:hover {
+            transform: scale(.97);
+            box-shadow: 0 0 15px rgba(255,255,255,.06);
+        }
+
+        .heart {
+            filter: drop-shadow(0 0 8px rgba(255,0,55,.8));
+        }
+
+        .fly-heart {
+            filter: drop-shadow(0 0 12px #ff1748) drop-shadow(0 0 30px rgba(255,0,55,.8));
         }
 
         .heart {
@@ -947,16 +990,14 @@ a little more every day. 🥺❤️`
         );
 
         const noTexts = [
-
-            "NO WAY! 😜",
+            "NO... 🥺",
             "Are you sure? 🥺",
-            "Think again! 😭",
-            "One more chance? 🥹",
-            "Pleaseeee 😭",
-            "Don't do this to me 💔",
-            "Give me a chance ❤️",
-            "Just click YES! 🥺"
-
+            "Think again... 💔",
+            "How could you leave me? 😭",
+            "Please don't do this... 🥹",
+            "You really don't want me? 💔",
+            "Just give me a chance... ❤️",
+            "Please... just say YES 🥺❤️"
         ];
 
         function moveNoButton() {
@@ -1014,7 +1055,10 @@ a little more every day. 🥺❤️`
             noCount++;
 
             yesBtn.style.transform =
-                `scale(${1 + noCount * .025})`;
+                `scale(${Math.min(1 + noCount * .11, 2.15)})`;
+
+            yesBtn.style.boxShadow =
+                `0 0 ${18 + noCount * 5}px rgba(255,0,55,.${Math.min(35 + noCount * 5, 90)})`;
         }
 
         noBtn.addEventListener(
