@@ -1165,13 +1165,16 @@ Would you be my girlfriend? 💖💕
         }
 
         yesBtn.addEventListener(
-            "click",
-            () => {
+        "click",
+        () => {
 
-                switchScene(
-                    scene2,
-                    scene3
+            switchScene(
+                scene2,
+                scene3
                 );
+
+        relationshipStart = new Date();
+        startLoveCounter();
 
                 noBtn.style.display =
                     "none";
@@ -1203,8 +1206,7 @@ Would you be my girlfriend? 💖💕
             }
         );
 
-        const relationshipStart =
-            new Date();
+        let relationshipStart = null;
 
         relationshipStart.setHours(0, 0, 0, 0);
 
